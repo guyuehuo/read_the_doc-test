@@ -64,7 +64,7 @@ int scoring_function::precalculate(const size_t t1, const size_t t2)
 {
 //	assert(t1 <= t2);
 	const size_t offset = nr * mr(t1, t2);
-	const float s = vdw[t1] + vdw[t2];
+	const float s = vdw[t1] + vdw[t2];//即Ri+Rj
 	const bool hydrophobic = is_hydrophobic(t1) && is_hydrophobic(t2);
 	const bool hbond = is_hbond(t1, t2);
 
@@ -73,7 +73,7 @@ int scoring_function::precalculate(const size_t t1, const size_t t2)
 	for (size_t i = 0; i < nr; ++i)
 	{
 		// Calculate the surface distance d.
-		const float d = rs[i] - s;
+		const float d = rs[i] - s;  //dij=rij-(Ri+Rj)
 
 		// The scoring function is a weighted sum of 5 terms. The first 3 terms depend on d only, while the latter 2 terms depend on t1, t2 and d.
 		et[i] =
