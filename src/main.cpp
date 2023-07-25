@@ -191,7 +191,9 @@ int main(int argc, char* argv[])
 		// Parse the ligand.
 		const path input_ligand_path = dir_iter->path();
 		const ligand lig(input_ligand_path);
-
+		
+//有多个ligind文件，每个ligind生成一个grid_maps
+		
 		// Create grid maps on the fly if necessary.
 		vector<size_t> xs;
 		for (size_t i = 0; i < lig.num_heavy_atoms; ++i)
