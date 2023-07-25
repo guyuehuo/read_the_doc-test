@@ -12,9 +12,9 @@ receptor::receptor(const path& p, const vec3& center, const vec3& span_, const f
 	for (size_t i = 0; i < 3; ++i)
 	{
 		// Slightly expand the user-input span to the nearest multiple of granularity.
-		num_grids[i] = static_cast<size_t>(ceil(span_[i] * grid_size_inverse[i]));
+		num_grids[i] = static_cast<size_t>(ceil(span_[i] * grid_size_inverse[i]));   //该维度上的网格划分数。
 		span[i] = grid_size[i] * num_grids[i];
-		num_probes[i] = num_grids[i] + 1;
+		num_probes[i] = num_grids[i] + 1;           //网格划分数加一
 
 		// Determine the two extreme corners.
 		corner0[i] = center[i]  - span[i] * 0.5f;
@@ -28,7 +28,7 @@ receptor::receptor(const path& p, const vec3& center, const vec3& span_, const f
 	partitions.resize(num_partitions);
 
 	// Parse the receptor line by line.
-	atoms.reserve(5000); // A receptor typically consists of <= 5,000 atoms.
+	atoms.reserve(5000); // A receptor typically consists of <= 5,000 atoms.  //分配空间5000
 	string residue = "XXXX"; // Current residue sequence, used to track residue change, initialized to a dummy value.
 	size_t residue_start; // The starting atom of the current residue.
 	string line;
