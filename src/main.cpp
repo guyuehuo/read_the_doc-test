@@ -202,13 +202,13 @@ int main(int argc, char* argv[])
 			if (rec.grid_maps[t].empty() && find(xs.cbegin(), xs.cend(), t) == xs.cend())
 			{
 				xs.push_back(t);
-				rec.grid_maps[t].resize(rec.num_probes);
+				rec.grid_maps[t].resize(rec.num_probes);//num_probes表示探测次数，所有map都一样
 			}
 		}
 		if (xs.size())
 		{
 			cout << "Creating " << setw(2) << xs.size() << " grid map" << (xs.size() == 1 ? ' ' : 's') << "        " << flush;
-			for (size_t z = 0; z < rec.num_probes[2]; ++z)
+			for (size_t z = 0; z < rec.num_probes[2]; ++z)             //沿着x轴方向，一个平面一个平面地探测
 			{
 				tp.push_back(packaged_task<int()>(bind(&receptor::populate, ref(rec), cref(xs), z, cref(sf))));
 			}
