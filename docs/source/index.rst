@@ -13,7 +13,7 @@ Contents
 --------
 
 .. toctree::
+
    installation
    usage
-
 OpenDock has its documentation hosted on Read the Docs.
