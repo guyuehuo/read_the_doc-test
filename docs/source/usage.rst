@@ -1,7 +1,11 @@
-# Framework architecture
-
-# Applications
-## Some simple examples
+Usage
+=====
+Framework architecture
+---------------------
+Applications
+------------
+Some simple examples
+-------------------
 1. create a simple Monte Carlo based sampling strategy with Vinascore for scoring. 
 In this example, the ligand is parsed by the `LigandConformation` class, and the receptor 
 is defined by the `ReceptorConformation` class. The scoring function here is `VinaSF`, which 
