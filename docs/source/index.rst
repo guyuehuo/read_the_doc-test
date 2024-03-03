@@ -1,4 +1,4 @@
-Welcome to OpenDock's documentation! /
+Welcome to OpenDock's documentation! 
 ===================================
 OpenDock is a versitile protein-ligand docking framework with diverse scoring functions. 
 
